@@ -4,6 +4,7 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,8 +20,10 @@ public class Main {
             emergencyRoom.addPatient(patient);
         }
 
-       emergencyRoom.printPatientsFromQueue();
+        patients.stream().limit(3);
+        emergencyRoom.printPatientsFromQueue();
         System.out.println("##############");
         emergencyRoom.printPatientsInPrioritizedOrder();
+
     }
 }
