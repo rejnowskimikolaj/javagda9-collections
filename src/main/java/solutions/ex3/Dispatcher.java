@@ -27,7 +27,7 @@ public class Dispatcher {
 
     public List<Report> getLast(int amount){
         return reports.values().stream()
-                                .sorted(Comparator.comparing(Report::getTimestamp))
+                                .sorted((x,y)->y.getTimestamp().compareTo(x.getTimestamp()))
                                 .limit(amount)
                                 .collect(Collectors.toList());
     }
